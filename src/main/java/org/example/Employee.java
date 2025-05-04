@@ -1,31 +1,40 @@
 package org.example;
 
 public class Employee {
-    int empid;
-    String name;
+    int empId;
+    String empName;
 
     public Employee() {
-        System.out.println("no arg constructor");
+        System.out.println("no arg constructor - Employee");
     }
 
-    public Employee(int empid, String name) {
-        this.empid = empid;
-        this.name = name;
+    public Employee(int empId, String empName) {
+        this.empId = empId;
+        this.empName = empName;
     }
 
-    public int getEmpid() {
-        return empid;
+    public int getEmpId() {
+        return empId;
     }
 
-    public void setEmpid(int empid) {
-        this.empid = empid;
+    public void setEmpId(int empId) {
+        this.empId = empId;
     }
 
-    public String getName() {
-        return name;
+    public String getEmpName() {
+        return empName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setEmpName(String empName) {
+        this.empName = empName;
+    }
+
+    public void setup(){
+        System.out.println("init function");
+    }
+
+    public void clear(){
+        //will only work before closing the config
+        System.out.println("destroy function");
     }
 }

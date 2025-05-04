@@ -2,12 +2,24 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
-                           http://www.springframework.org/schema/beans/spring-beans.xsd">
+                           http://www.springframework.org/schema/beans/spring-beans.xsd"
+       default-init-method="setup"
+       default-destroy-method="clear">
 
     <!-- Bean definitions go here -->
-    <bean id="emp" class="org.example.Employee" >
-        <property name="empid" value="1" />
-        <property name="name" value="Shivani" />
+    <bean id="emp1" class="org.example.Employee" init-method="setup" destroy-method="clear">
+        <property name="empId" value="1" />
+        <property name="empName" value="Shivani" />
+    </bean>
+
+    <bean id="emp2" class="org.example.Employee" scope="prototype">
+        <property name="empId" value="2" />
+        <property name="empName" value="Neha" />
+    </bean>
+
+
+    <bean id="emp" class="org.example.Department">
+        <property name="deptName" value="Computer" />
     </bean>
 
 </beans>
