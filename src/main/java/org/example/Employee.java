@@ -4,13 +4,24 @@ public class Employee {
     int empId;
     String empName;
 
+    Department department;
+
     public Employee() {
         System.out.println("no arg constructor - Employee");
     }
 
-    public Employee(int empId, String empName) {
+    public Employee(int empId, String empName, Department department) {
         this.empId = empId;
         this.empName = empName;
+        this.department = department;
+    }
+
+    public Department getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(Department department) {
+        this.department = department;
     }
 
     public int getEmpId() {

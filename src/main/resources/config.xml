@@ -10,15 +10,10 @@
     <bean id="emp1" class="org.example.Employee" init-method="setup" destroy-method="clear">
         <property name="empId" value="1" />
         <property name="empName" value="Shivani" />
+        <property name="department" ref="dept1" /> <!-- property name defined in the employee class and ref is the  id of the bean created for department -->
     </bean>
 
-    <bean id="emp2" class="org.example.Employee" scope="prototype">
-        <property name="empId" value="2" />
-        <property name="empName" value="Neha" />
-    </bean>
-
-
-    <bean id="emp" class="org.example.Department">
+    <bean id="dept1" class="org.example.Department">
         <property name="deptName" value="Computer" />
     </bean>
 
